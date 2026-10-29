@@ -6,7 +6,7 @@
 
 A Paris pâtisserie concept built around hand-piped macarons, a full vitrine, and the ceremony of choosing a box. The page is as much about the shop’s atmosphere as its pastries.
 
-The planned project address is `https://sucre.aarya.cyou/`. The site is an interactive concept; its booking, purchase, or application invitations do not complete real transactions.
+The project is live at `https://sucre.aarya.cyou/`. The site is an interactive concept; its booking, purchase, or application invitations do not complete real transactions.
 
 ## The idea
 
@@ -72,7 +72,7 @@ The build writes to `dist/`; preview serves it at `http://127.0.0.1:5191/`.
 
 ## Deployment
 
-For Cloudflare Pages, connect the repository's `main` branch. Use `npm run build` as the build command, `dist` as the output directory, and the repository root as the root directory. The React (Vite) preset supplies the build values; `wrangler.jsonc` also records the Pages output directory. The intended address is `https://sucre.aarya.cyou/`; DNS and a Pages project must be connected separately before it becomes live.
+For Cloudflare Pages, connect the repository's `main` branch. Use `npm run build` as the build command, `dist` as the output directory, and the repository root as the root directory. The React (Vite) preset supplies the build values; `wrangler.jsonc` also records the Pages output directory. The live site is `https://sucre.aarya.cyou/`; pushes to `main` deploy through the connected GitHub repository.
 
 ## Repository guide
 
