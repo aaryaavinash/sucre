@@ -1,9 +1,9 @@
 // "Coffret de six": a pistachio gift box with six slots. Macarons dropped in snap to a slot;
 // when the sixth lands the lid swings shut and a satin ribbon ties itself.
-import { THREE, clamp, lerp } from '../../src/core/engine.js';
-import { fbmNormal } from '../../src/core/textures.js';
+import { THREE, clamp, lerp } from './core/engine.js';
+import { fbmNormal } from './core/textures.js';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
-import { gsap } from '../../src/core/scroll.js';
+import { gsap } from './core/scroll.js';
 import { RAPIER } from './pastry.js';
 
 const W = 2.24, D = 1.52, H = 0.46, T = 0.045, LID_H = 0.17;

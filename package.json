@@ -1,7 +1,7 @@
 {
   "name": "sucre",
   "private": true,
-  "description": "Standalone Maison Sucre world from Dioramas.",
+  "description": "A Paris p\u00e2tisserie concept built around hand-piped macarons, a full vitrine, and the ceremony of choosing a box.",
   "license": "MIT",
   "version": "0.1.0",
   "type": "module",

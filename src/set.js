@@ -1,6 +1,6 @@
 // The set: a pale pink marble counter against a panelled (boiserie) wall, lit through a tall shop window.
-import { THREE } from '../../src/core/engine.js';
-import { bakeTexture, fbmNormal } from '../../src/core/textures.js';
+import { THREE } from './core/engine.js';
+import { bakeTexture, fbmNormal } from './core/textures.js';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
 // Units: 1 = 10 cm. Counter top is y = 0.

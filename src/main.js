@@ -1,11 +1,10 @@
 import './tailwind.css';
-import { Engine, THREE, normalize, prepModel, damp, clamp, smooth, lerp, studioEnvironment } from '../../src/core/engine.js';
-import { Assets } from '../../src/core/assets.js';
-import { Pointer } from '../../src/core/input.js';
-import { smoothScroll, gsap, reveal } from '../../src/core/scroll.js';
-// ORIGINAL (preserved, not deleted — disabled by comment): import { preloader, cursor, magnetic, worldNav } from '../../src/core/ui.js';
-import { preloader, cursor, magnetic } from '../../src/core/ui.js';
-import { PlanarReflection } from '../../src/core/reflector.js';
+import { Engine, THREE, normalize, prepModel, damp, clamp, smooth, lerp, studioEnvironment } from './core/engine.js';
+import { Assets } from './core/assets.js';
+import { Pointer } from './core/input.js';
+import { smoothScroll, gsap, reveal } from './core/scroll.js';
+import { preloader, cursor, magnetic } from './core/ui.js';
+import { PlanarReflection } from './core/reflector.js';
 import { DepthOfFieldEffect, BrightnessContrastEffect, HueSaturationEffect } from 'postprocessing';
 import { buildSet, windowCookie, COUNTER } from './set.js';
 import { Patisserie, TYPES, FLAVOURS } from './pastry.js';
@@ -107,7 +106,7 @@ const marks = new Marks(scene);
 
 const typeLoads = TYPES.map(def => Promise.all([assets.gltf(def.file), assets.gltf(def.shadow).catch(() => null)]).then(([g, s]) => ({ def, g, s })));
 let cake, cakeSpin = { v: 0.14 };
-const cakeLoad = assets.gltf('models/sucre/cake.glb').then(g => {
+const cakeLoad = assets.gltf('models/cake.glb').then(g => {
   const m = g.scene;
   normalize(m, 4.3, { axis: 'y' });
   prepModel(m, renderer, { env: 0.9, onMat: mat => warmFrosting(mat) });
@@ -483,7 +482,6 @@ engine.onTick((dt, t) => {
 });
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
-// ORIGINAL (preserved, not deleted — disabled by comment): worldNav('sucre', { theme: 'light', corner: 'bl' });
 cur = cursor({ color: '#45202b', blend: 'normal', size: 32 });
 magnetic();
 const lenis = smoothScroll({ lerp: 0.085 });

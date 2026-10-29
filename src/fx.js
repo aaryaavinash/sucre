@@ -1,6 +1,6 @@
 // Small tactile effects: icing-sugar puffs and gold-leaf flakes (one GPU particle pool),
 // ripples on the marble when you knock, and the fingertip mark that shows where the cursor touches the counter.
-import { THREE } from '../../src/core/engine.js';
+import { THREE } from './core/engine.js';
 
 export class Dust {
   constructor(scene, N = 4000) {

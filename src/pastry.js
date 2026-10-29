@@ -1,8 +1,8 @@
 // Pastries with real physics (Rapier): instanced meshes per type, simplified colliders, a kinematic fingertip,
 // spring pick-up and toss, knock waves, hops, rain, and texture-less proxies for the shadow pass.
 import RAPIER from '@dimforge/rapier3d-compat';
-import { THREE, clamp, lerp } from '../../src/core/engine.js';
-import { firstMesh } from '../../src/core/assets.js';
+import { THREE, clamp, lerp } from './core/engine.js';
+import { firstMesh } from './core/assets.js';
 import { COUNTER } from './set.js';
 
 export { RAPIER };
@@ -20,11 +20,11 @@ export const FLAVOURS = {
 const MAC_A_MIX = ['rose', 'rose', 'rose', 'citron', 'violette', 'chocolat', 'vanille', 'rose', 'citron', 'vanille'];
 
 export const TYPES = [
-  { key: 'macA', file: 'models/sucre/macaron-lo.glb', shadow: 'models/sucre/macaron-shadow.glb', size: 0.54, count: 48, shape: 'macaron', rest: 0.16, fric: 1.0, dens: 1.0, adamp: 0.7 },
-  { key: 'macB', file: 'models/sucre/macaron2-lo.glb', shadow: 'models/sucre/macaron2-shadow.glb', size: 0.54, count: 16, shape: 'macaron', rest: 0.16, fric: 1.0, dens: 1.0, adamp: 0.7 },
-  { key: 'berry', file: 'models/sucre/strawberry-lo.glb', shadow: 'models/sucre/strawberry-shadow.glb', size: 0.46, count: 26, shape: 'ball', rest: 0.26, fric: 0.9, dens: 1.1, adamp: 1.6 },
-  { key: 'croissant', file: 'models/sucre/croissant-lo.glb', shadow: 'models/sucre/croissant-shadow.glb', size: 1.3, count: 7, shape: 'capsule', rest: 0.08, fric: 1.0, dens: 0.35, adamp: 1.2, upright: true },
-  { key: 'tart', file: 'models/sucre/tart-lo.glb', shadow: 'models/sucre/tart-shadow.glb', size: 0.98, count: 5, shape: 'cylinder', rest: 0.04, fric: 1.0, dens: 0.9, adamp: 2.5, upright: true },
+  { key: 'macA', file: 'models/macaron-lo.glb', shadow: 'models/macaron-shadow.glb', size: 0.54, count: 48, shape: 'macaron', rest: 0.16, fric: 1.0, dens: 1.0, adamp: 0.7 },
+  { key: 'macB', file: 'models/macaron2-lo.glb', shadow: 'models/macaron2-shadow.glb', size: 0.54, count: 16, shape: 'macaron', rest: 0.16, fric: 1.0, dens: 1.0, adamp: 0.7 },
+  { key: 'berry', file: 'models/strawberry-lo.glb', shadow: 'models/strawberry-shadow.glb', size: 0.46, count: 26, shape: 'ball', rest: 0.26, fric: 0.9, dens: 1.1, adamp: 1.6 },
+  { key: 'croissant', file: 'models/croissant-lo.glb', shadow: 'models/croissant-shadow.glb', size: 1.3, count: 7, shape: 'capsule', rest: 0.08, fric: 1.0, dens: 0.35, adamp: 1.2, upright: true },
+  { key: 'tart', file: 'models/tart-lo.glb', shadow: 'models/tart-shadow.glb', size: 0.98, count: 5, shape: 'cylinder', rest: 0.04, fric: 1.0, dens: 0.9, adamp: 2.5, upright: true },
 ];
 
 const _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _p = new THREE.Vector3(), _s = new THREE.Vector3(1, 1, 1), _e = new THREE.Euler();
